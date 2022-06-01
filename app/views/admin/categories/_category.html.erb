@@ -1,0 +1,9 @@
+<tr>
+  <% quantity = Product.where(category_id: category.id).count %>
+  <td>
+    <%= category.name %>
+  </td>
+  <td>
+    <%= quantity %>
+  </td>
+</tr>
