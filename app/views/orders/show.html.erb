@@ -4,6 +4,12 @@
     <h1>Order #<%= @order.id %></h1>
   </header>
 
+  <%= render 'line-item' %>
+
+  <p><%=humanized_money_with_symbol @order.total_cents / 100 %></p>
+  <p><%=@order.email %></p>
+
+
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
   </div>

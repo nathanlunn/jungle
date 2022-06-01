@@ -1,0 +1,13 @@
+<article>
+
+  <% @line_items.each do |item| %>
+    <% product = Product.find(item[:product_id]) %>
+    <%= image_tag product.image.thumb.url , alt: product.name %>
+    <h1><%= product.name %></h1>
+    <p><%= product.description %></p>
+    <p><%= item.quantity %></p>
+    
+  <% end %>
+
+
+</article>
