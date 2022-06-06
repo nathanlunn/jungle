@@ -78,5 +78,21 @@ RSpec.describe User, type: :model do
         result = User.authenticate_with_credentials('nateluffasdnn@gmail.com', password)
         expect(result).to eq(nil)
     end
+    
+    it "should return user match when user adds whitespace to email" do
+      password = 'thispassword'
+        new_user = User.new(first_name: 'Nathan', last_name: 'Lunn', email: 'natelunn@gmail.com', password: password, password_confirmation: password)
+        new_user.save
+        result = User.authenticate_with_credentials('   natelunn@gmail.com    ', password)
+        expect(result).to eq(new_user)
+    end
+    
+    it "should return user match when user adds uses wrong case for email" do
+      password = 'thispassword'
+        new_user = User.new(first_name: 'Nathan', last_name: 'Lunn', email: 'natelunn@gmail.com', password: password, password_confirmation: password)
+        new_user.save
+        result = User.authenticate_with_credentials('naTelUnn@gmail.com', password)
+        expect(result).to eq(new_user)
+    end
   end
 end
