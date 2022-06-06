@@ -1,6 +1,20 @@
 # Jungle
 
+**Version 1.0.0**
+
+---
+
+## Contributors
+
+- Nathan Lunn <nathandougalslunn@gmail.com>
+
+---
+
+## About
+
 A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
+
+---
 
 ## Setup
 
@@ -29,3 +43,9 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - Bootstrap 5
 - PostgreSQL 9.x
 - Stripe
+
+## Screenshots
+
+!['Home Page']()
+!['Single Product Page']()
+!['Cart Page']()
